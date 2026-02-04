@@ -334,6 +334,15 @@ with tab3:
     side_files_onestep = st.file_uploader("上下用画像", type=['png', 'jpg', 'jpeg', 'bmp', 'gif'], accept_multiple_files=True, key="sides_onestep")
     
     if main_file_onestep is not None and len(side_files_onestep) > 0:
+        if 'current_main_file' not in st.session_state or st.session_state.current_main_file != main_file_onestep.name:
+            st.session_state.current_main_file = main_file_onestep.name
+            if 'one_image_buffers' in st.session_state:
+                del st.session_state.one_image_buffers
+            if 'one_sides' in st.session_state:
+                del st.session_state.one_sides
+            if 'one_heights' in st.session_state:
+                del st.session_state.one_heights
+        
         st.write(f"✓ {len(side_files_onestep)}枚の上下用画像がアップロードされました")
         
         main_img = Image.open(main_file_onestep)
