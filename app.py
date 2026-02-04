@@ -447,12 +447,12 @@ with tab3:
         st.write("**個別ダウンロード**")
         col1, col2, col3, col4 = st.columns(4, gap="small")
         with col1:
-            st.download_button("1.png", st.session_state.one_image_buffers[3], "1.png", "image/png", key="one_1", use_container_width=True)
+            st.download_button("1.png", st.session_state.one_image_buffers[0], "1.png", "image/png", key="one_1", use_container_width=True)
         with col2:
-            st.download_button("2.png", st.session_state.one_image_buffers[2], "2.png", "image/png", key="one_2", use_container_width=True)
+            st.download_button("2.png", st.session_state.one_image_buffers[1], "2.png", "image/png", key="one_2", use_container_width=True)
         with col3:
-            st.download_button("3.png", st.session_state.one_image_buffers[1], "3.png", "image/png", key="one_3", use_container_width=True)
+            st.download_button("3.png", st.session_state.one_image_buffers[2], "3.png", "image/png", key="one_3", use_container_width=True)
         with col4:
-            st.download_button("4.png", st.session_state.one_image_buffers[0], "4.png", "image/png", key="one_4", use_container_width=True)
+            st.download_button("4.png", st.session_state.one_image_buffers[3], "4.png", "image/png", key="one_4", use_container_width=True)
     else:
         st.info("👆 メイン画像と上下用画像をアップロードしてください")
